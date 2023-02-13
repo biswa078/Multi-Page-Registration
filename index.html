@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/style.css">
+    
+</head>
+        <style> body{background-color: rgb(203, 242, 243);}</style>
+<body>
+    <div>
+ 
+    <div id="multi-step-form-container">
+        <!-- Form Steps / Progress Bar -->
+        <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
+            <!-- Step 1 -->
+            <li class="form-stepper-active text-center form-stepper-list" step="1">
+                <a class="mx-2">
+                    <span class="form-stepper-circle">
+                        <span>1</span>
+                    </span>
+                    <div class="label">Personal Details</div>
+                    
+                </a>
+            </li>
+            <!-- Step 2 -->
+            <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                <a class="mx-2">
+                    <span class="form-stepper-circle text-muted">
+                        <span>2</span>
+                    </span>
+                    <div class="label text-muted">Academics Details</div>
+                </a>
+            </li>
+            <!-- Step 3 -->
+            <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                <a class="mx-2">
+                    <span class="form-stepper-circle text-muted">
+                        <span>3</span>
+                    </span>
+                    <div class="label text-muted">Upload Documents</div>
+                </a>
+            </li>
+        </ul>
+        <!-- Step Wise Form Content -->
+        <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST">
+            <!-- Step 1 Content -->
+            <section id="step-1" class="form-step">
+                <h2 class="font-normal">Personal Details</h2>
+                <!-- Step 1 input fields -->
+                <form>
+                    <div class="form-group">
+                      <label for="name">Name </label><span style="color: red;">*</span>
+                      <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="First" id="fname">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="Last" id="lname">
+                        </div>
+                      </div>
+                      
+                    </div>
+                    <div class="form-group">
+                      <label for="dob">Date of Birth</label><span style="color: red;">*</span>
+                      <input type="date" class="form-control" id="dob" placeholder="MM/DD/YYYY">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label><span style="color: red;">*</span>
+                        <input type="email" class="form-control" id="email">
+                      </div>
+                      <div class="form-group">
+                        <label for="faname">Father's Name</label><span style="color: red;">*</span>
+                        <div class="row">
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="First" id="ffname">
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="Last" id="flname">
+                          </div>
+                        </div>
+                        
+                      </div>
+        
+                      <div class="form-group">
+                        <label for="mname">Mother's Name</label><span style="color: red;">*</span>
+                        <div class="row">
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="First" id="mfname">
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="Last" id="mlname">
+                          </div>
+                        </div>
+                        
+                      </div>
+                      <div class="form-group">
+                        <label for="gender">Gender</label><span style="color: red;">*</span>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="Male" checked>
+                            <label class="form-check-label" for="gender">
+                              M
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="Female">
+                            <label class="form-check-label" for="gender">
+                              F
+                            </label>
+                          </div>
+                        
+                      </div>
+                      <div class="form-group">
+                        <label for="nationality">Nationality</label><span style="color: red;">*</span>
+                        <input type="text" class="form-control" id="nationality">
+                      </div>
+                      <div class="form-group">
+                        <label for="address">Home Address</label><span style="color: red;">*</span>
+                        <input type="text" class="form-control" id="address">
+                      </div>
+                      <div class="<div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                              <input type="text" class="form-control" placeholder="City" id="city">
+                            </div>
+                            <div class="col">
+                              <input type="text" class="form-control" placeholder="Country" id="country">
+                            </div>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="telh">Telephone - Home</label>
+                        <input type="text" class="form-control" id="telh">
+                      </div>
+                      <div class="form-group">
+                        <label for="telm">Telephone - Mobile</label>
+                        <input type="text" class="form-control" id="telm">
+                      </div>
+                    
+                    
+                  </form>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="2" onclick="return validateForm1()">Next</button>
+                </div>
+            </section>
+            <!-- Step 2 Content, default hidden on page load. -->
+            <section id="step-2" class="form-step d-none">
+                <h2 class="font-normal">Academic Details</h2>
+                <!-- Step 2 input fields -->
+                <div class="mt-3">
+                  <form>
+                    <div class="form-group">
+                      <label for="name">HSC</label><span style="color: red;">*</span>
+                      <div class="row">
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="HSC Institute Name" id="hsci">
+                        </div>
+                        <div class="col">
+                          <input type="text" class="form-control" placeholder="HSC Board" id="hscb">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="HSC Percentage" id="hscp">
+                          </div>
+                      </div>
+                      
+                    </div>
+                    <div class="form-group">
+                        <label for="name">SSC</label><span style="color: red;">*</span>
+                        <div class="row">
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="SSC Institute Name" id="ssci">
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="SSC Board" id="sscb">
+                          </div>
+                          <div class="col">
+                              <input type="text" class="form-control" placeholder="SSC Percentage" id="sscp">
+                            </div>
+                        </div>
+                        
+                      </div>
+                    
+                      <div class="form-group">
+                        <label for="faname">Course</label><span style="color: red;">*</span>
+                        <div class="row">
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="Currently Persuing" id="cp">
+                          </div>
+                          <div class="col">
+                            <input type="text" class="form-control" placeholder="Current Institute Name" id="cin">
+                          </div>
+                        </div>
+                        
+                      </div>
+        
+                      <div class="form-group">
+                        <label for="mname">Overall Percentage</label><span style="color: red;">*</span>
+                        <div class="row">
+                          <div class="col">
+                            <input type="text" class="form-control" id="op" >
+                          </div>
+                          
+                        </div>
+                        
+                      </div>
+                      <div class="form-group">
+                        <label for="mname">Current Backlog if Any</label>
+                        <div class="row">
+                          <div class="col">
+                            <input type="text" class="form-control" id="cb" >
+                          </div>
+                          
+                        </div>
+                        
+                      </div>
+                  
+                  </form>
+                </div>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="1" onclick="return validateForm2()">Prev</button>
+                    <button class="button btn-navigate-form-step" type="button" step_number="3" onclick="return validateForm2()">Next</button>
+                </div>
+            </section>
+            <!-- Step 3 Content, default hidden on page load. -->
+            <section id="step-3" class="form-step d-none">
+                <h2 class="font-normal">Upload Documents</h2>
+                <!-- Step 3 input fields -->
+                <div class="mt-3">
+                  <form>
+                    <div class="form-group">
+                      <label for="name">Passport size photograph</label><span style="color: red;">*</span>
+                      <div class="row">
+                        <div class="col-10">
+                          <input type="file" class="form-control" placeholder="Passport Size Photo" id="pp">
+                        </div>
+                        <div class="col-2">
+                          <img id="pppreview" src="download.png" alt="Preview" width="200px" height="200px">
+                        </div>
+                        </div>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="name">HSC Marksheet</label><span style="color: red;">*</span>
+                        <div class="row">
+                        <div class="col-10">
+                          <input type="file" class="form-control" placeholder="HSC Board" id="hsc">
+                        </div>
+                        <div class="col-2">
+                          <img id="hscpreview" src="download.png" alt="Preview" width="200px" height="200px">
+                        </div>
+                      </div>
+                        
+                      </div>
+                      
+                    
+        
+                    <div class="form-group">
+                      <label for="name">SSC Marksheet</label><span style="color: red;">*</span>
+                      <div class="row">
+                        <div class="col-10">
+                          <input type="file" class="form-control" placeholder="SSC Marksheet" id="ssc">
+                        </div>
+                        <div class="col-2">
+                          <img id="sscpreview" src="download.png" alt="Preview" width="200px" height="200px">
+                        </div>
+                        </div>
+                        </div>
+
+                        <div class="form-group">
+                        <label for="name">All Semester Marksheet in pdf</label><span style="color: red;">*</span>
+                        <div class="row">
+                        <div class="col-12">
+                          <input type="file" class="form-control" placeholder="All Semester" id="all">
+                        </div>
+                        
+                        
+                        
+                      </div>
+                      
+                    </div>
+                       
+                     
+                    
+                    
+                  </form>
+                </div>
+                <div class="mt-3">
+                    <button class="button btn-navigate-form-step" type="button" step_number="2" onclick="return validateForm()">Prev</button>
+                    <button class="button submit-btn" type="submit" onclick="saveData()">Save</button>
+                </div>
+            </section>
+        </form>
+    </div>
+</div>
+<script src="/bootstrap/js/bootstrap.js"></script>
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<script src="/myjs.js"></script>
+<script src="custom.js"></script>
+<script>
+  /* For photo*/
+  document.querySelector("#pp").addEventListener("change",function(){
+    const reader=new FileReader();
+    reader.addEventListener("load",()=>{
+      const fileSize = this.files[0].size / 1024 / 1024;
+      if(fileSize > 4)
+      {
+        alert("file size should not exceed 4 MB");
+        return false;
+      }
+      localStorage.setItem("pass-photo",reader.result);
+      alert("Passport photo Uploaded Sucessfully");
+      const recentimg=localStorage.getItem("pass-photo");
+     
+if(recentimg)
+{
+  document.querySelector("#pppreview").setAttribute("src",recentimg);
+}
+    }
+    );
+reader.readAsDataURL(this.files[0]);
+  });
+  document.addEventListener("DOMContentLoaded",()=>{
+const recentimg=localStorage.getItem("pass-photo");
+if(recentimg)
+{
+  document.querySelector("#pppreview").setAttribute("src",recentimg);
+}
+  });
+/* For HSC Mark*/
+  document.querySelector("#hsc").addEventListener("change",function(){
+    const reader=new FileReader();
+    reader.addEventListener("load",()=>{
+      const fileSize = this.files[0].size / 1024 / 1024;
+      if(fileSize > 4)
+      {
+        alert("file size should not exceed 4 MB");
+        return false;
+      }
+      localStorage.setItem("hsc",reader.result);
+      alert("HSC Marksheet Uploaded Sucessfully");
+      const recentimg=localStorage.getItem("hsc");
+      
+if(recentimg)
+{
+  document.querySelector("#hscpreview").setAttribute("src",recentimg);
+}
+     
+    }
+    );
+reader.readAsDataURL(this.files[0]);
+  });
+
+  /* For SSC Mark */
+  document.querySelector("#ssc").addEventListener("change",function(){
+    const reader=new FileReader();
+    reader.addEventListener("load",()=>{
+      const fileSize = this.files[0].size / 1024 / 1024;
+      if(fileSize > 4)
+      {
+        alert("file size should not exceed 4 MB");
+        return false;
+      }
+      localStorage.setItem("ssc",reader.result);
+      alert("SSC Marksheet Uploaded Sucessfully");
+      const recentimg=localStorage.getItem("ssc");
+      
+if(recentimg)
+{
+  document.querySelector("#sscpreview").setAttribute("src",recentimg);
+}
+     
+    }
+    );
+reader.readAsDataURL(this.files[0]);
+  });
+
+  /* For all pdf */
+  document.querySelector("#all").addEventListener("change",function(){
+    const reader=new FileReader();
+    reader.addEventListener("load",()=>{
+      const fileSize = this.files[0].size / 1024 / 1024;
+      if(fileSize > 10)
+      {
+        alert("file size should not exceed 10 MB");
+        return false;
+      }
+      localStorage.setItem("all",reader.result);
+      alert("ALL Marksheet Uploaded Sucessfully");
+      
+     
+    }
+    );
+reader.readAsDataURL(this.files[0]);
+  });
+  
+</script>
+
+</body>
+</html>
